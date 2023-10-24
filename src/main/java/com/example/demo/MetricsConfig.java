@@ -20,7 +20,6 @@ public class MetricsConfig {
     public CloudWatchAsyncClient cloudWatchAsyncClient() {
         return CloudWatchAsyncClient
                 .builder()
-                .credentialsProvider(WebIdentityTokenFileCredentialsProvider.create())
                 .region(Region.EU_WEST_1)
                 .build();
     }
