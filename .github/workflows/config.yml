@@ -45,21 +45,21 @@ jobs:
 
       - name: Terraform Init
         id: init
-        working-directory: "./infa"
+        working-directory: ./infra
         run: terraform init
 
       - name: Terraform Plan
         id: plan
-        working-directory: "./infa"
+        working-directory: ./infra
         run: terraform plan   -var="prefix=$PREFIX" -var="image=$IMAGE"  -no-color
         continue-on-error: true
 
       - name: Terraform Plan Status
         if: steps.plan.outcome == 'failure'
-        working-directory: "./infa"
+        working-directory: ./infra
         run: exit 1
 
       - name: Terraform Apply
-        working-directory: "./infa"
+        working-directory: ./infra
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -var="prefix=$PREFIX" -var="image=$IMAGE"  -var="student_name=bjne002" -auto-approve
