@@ -51,7 +51,7 @@ jobs:
       - name: Terraform Plan
         id: plan
         working-directory: ./infra
-        run: terraform plan   -var="prefix=$PREFIX" -var="image=$IMAGE"  -var="student_name=bjne002" -no-color
+        run: terraform plan   -var="prefix=$PREFIX" -var="image=$IMAGE"  -var="student_name=bjnetest" -no-color
         continue-on-error: true
 
       - name: Terraform Plan Status
@@ -62,4 +62,4 @@ jobs:
       - name: Terraform Apply
         working-directory: ./infra
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        run: terraform apply -var="prefix=$PREFIX" -var="image=$IMAGE"  -var="student_name=bjne002" -auto-approve
+        run: terraform apply -var="prefix=$PREFIX" -var="image=$IMAGE"  -var="student_name=bjnetest" -auto-approve
