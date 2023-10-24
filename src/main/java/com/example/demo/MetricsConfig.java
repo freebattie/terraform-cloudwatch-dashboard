@@ -14,6 +14,7 @@ import java.util.Map;
 
 @Configuration
 public class MetricsConfig {
+
     @Bean
     public CloudWatchAsyncClient cloudWatchAsyncClient() {
         return CloudWatchAsyncClient
