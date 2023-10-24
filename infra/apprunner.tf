@@ -4,7 +4,7 @@ resource "aws_apprunner_service" "service" {
 
     authentication_configuration {
 
-      access_role_arn = "arn:aws:iam::244530008913:role/aws-service-role/apprunner.amazonaws.com/AWSServiceRoleForAppRunner"
+      access_role_arn = "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
     }
 
     image_repository {
