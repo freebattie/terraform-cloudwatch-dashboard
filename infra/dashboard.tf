@@ -13,7 +13,10 @@ resource "aws_cloudwatch_dashboard" "main" {
         "metrics": [
           [
             "${var.student_name}",
-            "account_count.value"
+            "account_count.value",
+            "update_account.value",
+            "update_account.count"
+
           ]
         ],
         "period": 300,
