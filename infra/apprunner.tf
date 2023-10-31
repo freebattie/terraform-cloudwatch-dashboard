@@ -3,7 +3,7 @@ resource "aws_apprunner_service" "service" {
 
 
 instance_configuration {
-  instance_role_arn = "arn:aws:iam::244530008913:instance-profile/apprunner_bjen"
+  instance_role_arn = "arn:aws:iam::244530008913:role/apprunner_bjen"
 }
   source_configuration {
 
