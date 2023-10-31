@@ -28,24 +28,21 @@ resource "aws_iam_role" "bjne_apprunner_cloudwatch_role" {
 
   name = "bjne_apprunner_cloudwatch"
 
-
-
   assume_role_policy = <<EOF
-
-{
-
   {
     "Version": "2012-10-17",
-    "Statement": [
+    "Statement":
+    [
         {
             "Effect": "Allow",
-            "Principal": {
+            "Principal":
+            {
                 "Service": "tasks.apprunner.amazonaws.com"
             },
             "Action": "sts:AssumeRole"
         }
     ]
-}
+  }
 
 EOF
 
