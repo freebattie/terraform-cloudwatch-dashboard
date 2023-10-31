@@ -2,13 +2,15 @@ resource "aws_apprunner_service" "service" {
   service_name = "${var.prefix}-apprunner"
 
 
-
+instance_configuration {
+  instance_role_arn = "arn:aws:iam::244530008913:instance-profile/apprunner_bjen"
+}
   source_configuration {
 
 
     authentication_configuration {
       access_role_arn = "arn:aws:iam::244530008913:role/service-role/AppRunnerECRAccessRole"
-      service_role_arn = "arn:aws:iam::244530008913:instance-profile/apprunner_bjen"
+      #service_role_arn = "arn:aws:iam::244530008913:instance-profile/apprunner_bjen"
 
 
     }
