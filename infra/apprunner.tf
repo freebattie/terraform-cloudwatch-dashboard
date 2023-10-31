@@ -1,11 +1,11 @@
 resource "aws_apprunner_service" "service" {
   service_name = "${var.prefix}-apprunner"
-  depends_on = [aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile]
+
 
 instance_configuration {
 
 
-  instance_role_arn = "arn:aws:iam::244530008913:role/${aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile.arn}"
+  instance_role_arn = "arn:aws:iam::244530008913:role/${aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile.name}"
 
 }
   source_configuration {
