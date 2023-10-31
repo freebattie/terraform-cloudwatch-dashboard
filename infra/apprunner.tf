@@ -1,6 +1,6 @@
 resource "aws_apprunner_service" "service" {
   service_name = "${var.prefix}-apprunner"
-
+  depends_on = [aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile]
 
 instance_configuration {
 
