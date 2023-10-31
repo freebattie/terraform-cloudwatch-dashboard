@@ -5,7 +5,7 @@ resource "aws_apprunner_service" "service" {
 instance_configuration {
 
 
-  instance_role_arn = aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile.arn
+  instance_role_arn = "arn:aws:iam::244530008913:role/${aws_iam_instance_profile.bjne_apprunner_cloudwatch_profile.arn}"
 
 }
   source_configuration {
