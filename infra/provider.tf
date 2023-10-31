@@ -15,3 +15,45 @@ terraform {
 
 
 }
+
+
+resource "aws_iam_instance_profile" "bjne_apprunner_cloudwatch_profile" {
+
+  name = "bjne_apprunner_cloudwatchprofile"
+
+  role = aws_iam_role.bjne_apprunner_cloudwatch_role.name
+
+}
+resource "aws_iam_role" "bjne_apprunner_cloudwatch_role" {
+
+  name = "bjne_apprunner_cloudwatch"
+
+
+
+  assume_role_policy = <<EOF
+
+{
+
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": "tasks.apprunner.amazonaws.com"
+            },
+            "Action": "sts:AssumeRole"
+        }
+    ]
+}
+
+EOF
+
+}
+resource "aws_iam_role_policy_attachment" "bjne_apprunner_cloudwatch_attachment" {
+
+  role       = aws_iam_role.bjne_apprunner_cloudwatch_role.name
+
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+
+}
