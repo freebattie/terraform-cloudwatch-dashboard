@@ -19,14 +19,14 @@ terraform {
 
 resource "aws_iam_instance_profile" "bjne_apprunner_cloudwatch_profile" {
 
-  name = "bjne_apprunner_cloudwatchprofile"
+  name = "bjne_apprunner_cloudwatch_profile"
 
   role = aws_iam_role.bjne_apprunner_cloudwatch_role.name
 
 }
 resource "aws_iam_role" "bjne_apprunner_cloudwatch_role" {
 
-  name = "bjne_apprunner_cloudwatch"
+  name = "bjne_apprunner_cloudwatch_role"
 
   assume_role_policy = <<EOF
   {
