@@ -14,6 +14,7 @@ import java.math.BigInteger;
 public class Account {
 
     private String currency = "NOK";
+
     private String id;
     private BigDecimal balance = BigDecimal.valueOf(0);
 
